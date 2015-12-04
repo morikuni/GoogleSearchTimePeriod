@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "GoogleSearchTimePeriod",
+	"version": "0.1.0",
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_title": "GoogleSearchTimePeriod",
+		"default_icon": {
+			"19": "icons/icon19.png",
+			"38": "icons/icon38.png"
+		}
+	},
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"description": "Google検索に期間指定を追加します。",
+	"permissions": ["tabs"],
+	"homepage_url": "https://github.com/morikuni/GoogleSearchTimePeriod"
+}
