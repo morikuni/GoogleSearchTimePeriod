@@ -21,11 +21,11 @@ function createRemovePeriodEventListener(){
 	})
 }
 
-function createEventListener(urlConverteFunc){
+function createEventListener(urlConvertFunc){
 	return function(){
 		chrome.tabs.getSelected(null, function(tab){
 			if(tab.url.includes("google") && tab.url.includes("search?")){
-				var url = urlConverteFunc(tab.url);
+				var url = urlConvertFunc(tab.url);
 				chrome.tabs.update(tab.id, {url: url});
 			}
 			window.close();
