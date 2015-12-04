@@ -24,7 +24,7 @@ function createRemovePeriodEventListener(){
 function createEventListener(urlConvertFunc){
 	return function(){
 		chrome.tabs.getSelected(null, function(tab){
-			if(tab.url.includes("google") && tab.url.includes("search?")){
+			if(isGoogleSearch(tab.url)){
 				var url = urlConvertFunc(tab.url);
 				chrome.tabs.update(tab.id, {url: url});
 			}
@@ -45,4 +45,11 @@ function removePeriod(currentUrl){
 		return !s.startsWith("tbs=");
 	})
 	return noparam+"?"+params.join("&");
+}
+
+function isGoogleSearch(url){
+	return (
+		url.includes("google") &&
+		(url.includes("search?") || url.includes("webhp?"))
+	);
 }
